@@ -10,17 +10,14 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
-- task: PublishBuildArtifacts@1
 - task: SonarQubePrepare@4
   inputs:
+    SonarQube: 'AzureSonar'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'HTML'
-    cliProjectName: 'HTML'
+    cliProjectKey: 'SonarQube'
+    cliProjectName: 'Html'
     cliSources: '.'
 
 - task: SonarQubeAnalyze@4
+
