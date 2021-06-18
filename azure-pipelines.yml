@@ -14,10 +14,7 @@ steps:
   inputs:
     SonarQube: 'AzureSonar'
     scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'SonarQube'
-    cliProjectName: 'Html'
-    cliSources: '.'
+    configMode: 'file'
 
 - task: SonarQubeAnalyze@4
 
