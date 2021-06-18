@@ -12,9 +12,15 @@ pool:
 steps:
 - task: SonarQubePrepare@4
   inputs:
-    SonarQube: 'AzureSonar'
+    SonarQube: 'AzureSonar2'
     scannerMode: 'CLI'
-    configMode: 'file'
+    configMode: 'manual'
+    cliProjectKey: 'Devops'
+    cliSources: '.'
 
 - task: SonarQubeAnalyze@4
+
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
 
